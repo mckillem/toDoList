@@ -3,7 +3,7 @@
 
     1-> udělat čáru, která oddělí logo od zbytku
     2-> v té větší části udělat vložení nové html stránky, aby index byl ideálně jenom jednou nastaven a zbytek bylo v jiných souborech.
-    3-> vytvořit základní css styly
+    3-> vytvořit základní css styly jako třídy:
                                     - bolt text
                                     - kurzíva
                                     - uppercase
