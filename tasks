@@ -9,3 +9,6 @@
                                     - uppercase
                                     - italic
                                     - definovat šířky
+                                    - barvy
+                                        - bílá, černá, červená, zelená, modrá, šedá
+    4-> stáhnout jquery a dát do js adresáře
