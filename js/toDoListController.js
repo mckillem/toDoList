@@ -2,7 +2,8 @@
 angular.module('toDoList', []).controller('namesCtrl', function($scope) {
 
     $scope.loginUser = false;
-
+    $scope.logInDateTime = null;
+    $scope.logOutDateTime = null;
     $scope.user = {};
 
     $scope.allowedLoginUsers = [
@@ -19,18 +20,27 @@ angular.module('toDoList', []).controller('namesCtrl', function($scope) {
     ];
 
 
-    $scope.clickLogin = function (userName, password) {
+    $scope.clickLogIn = function (userName, password) {
         var passwd = MD5(password);
         // zatím je to takhle, jinak zde bude komunikace s DB a ověření, zda takový uživatel vůbec existuje
         _.forEach($scope.allowedLoginUsers, function (user) {
             if ((user.userName === userName) && (user.passwd === password)){
                 $scope.loginUser = true;
                 $scope.user = user;
+                $scope.logInDateTime = new Date();
             }
 
         })
 
-    }
+    };
+
+    $scope.clickLogOut = function () {
+        $scope.loginUser = false;
+        $scope.logOutDateTime = new Date();
+
+    //    dořešení pro práci s datem, aby bylo možné říci jak dlouho byl uživatel přihlášen do systému
+
+    };
 
 
     var MD5 = function (string) {
