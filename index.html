@@ -3,15 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <title>ToDoList</title>
-        <script src="js/angular.min.js"></script>
-        <script src="js/toDoListController.js"></script>
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/toDoListController.js"></script>
     </head>
     <body>
         <div  ng-controller="toDoListController">
             <!--Zde bude ta požadovaná stránka-->
 
             <div class="left" ng-if="!loginUser">
-                ahoj
                 <iframe src="/html/login.tpl.html"></iframe>
             </div>
             <div class="left" ng-if="loginUser">
