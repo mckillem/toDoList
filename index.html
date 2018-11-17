@@ -5,6 +5,7 @@
         <title>ToDoList</title>
         <script type="text/javascript" src="js/angular.min.js"></script>
         <script type="text/javascript" src="js/toDoListController.js"></script>
+        <script type="text/javascript" src="js/Services/globalServices.js"></script>
         <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
 
@@ -17,10 +18,12 @@
             <!--Zde bude ta požadovaná stránka-->
 
             <div class="left" ng-if="!loginUser">
-                <iframe src="html/login.tpl.html"></iframe>
+                <div ng-include="'html/login.tpl.html'" onload="expression" autoscroll="expression"></div>
+                <!--<iframe src="html/login.tpl.html"></iframe>-->
             </div>
             <div class="left" ng-if="loginUser">
-                <iframe src="html/basic.tpl.html"></iframe>
+                <div ng-include="'html/basic.tpl.html'"></div>
+                <!--<iframe src="html/basic.tpl.html"></iframe>-->
             </div>
 
         </div>
