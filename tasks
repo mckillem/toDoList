@@ -1,7 +1,6 @@
 
-úkoly na sobotu 17.11.2018
+úkoly na nedělu 18.11.2018
 
-    2-> v té větší části udělat vložení nové html stránky, aby index byl ideálně jenom jednou nastaven a zbytek bylo v jiných souborech.
     3-> vytvořit základní css styly jako třídy:
                                     - definovat šířky po procentech
 
@@ -11,3 +10,4 @@
     1-> login.tpl.html nastavit přihlašovací údaje a tlačítko na přihlášení. vycentrovat do prostředka obrazovky
     2-> basic.tpl.html nastavit tak, aby byla obrazovka rozdělena horizontální čárou a levá strana byla široká 250px zatím
     3-> vytvořit css styl pro řádek, abych mohl říci, že využiji celou dostupnou šířku
+    4-> vytvořit styl overflow
