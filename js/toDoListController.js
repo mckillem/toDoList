@@ -1,5 +1,5 @@
 
-angular.module('toDoList', []).controller('toDoListController', function($scope, $timeout, globalServices) {
+angular.module('toDoList', []).controller('toDoListController', function($scope, $timeout) {
 
     $scope.loginUser = false;
     $scope.logInDateTime = null;
