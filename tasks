@@ -1,15 +1,8 @@
 
 úkoly na sobotu 17.11.2018
 
-    1-> udělat čáru, která oddělí logo od zbytku
     2-> v té větší části udělat vložení nové html stránky, aby index byl ideálně jenom jednou nastaven a zbytek bylo v jiných souborech.
     3-> vytvořit základní css styly jako třídy:
-                                    - bolt text
-                                    - kurzíva
-                                    - uppercase
-                                    - italic
                                     - definovat šířky
-                                    - barvy
-                                        - bílá, černá, červená, zelená, modrá, šedá
-    4-> stáhnout jquery a dát do js adresáře
+
 
