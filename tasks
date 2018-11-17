@@ -9,5 +9,5 @@
 úkoly na neděli 18.11.2018
 
     1-> login.tpl.html nastavit přihlašovací údaje a tlačítko na přihlášení. vycentrovat do prostředka obrazovky
-    2-> basic.tpl.html nastavit tak, aby byla obrazovka rozdělena horeizontální čárou a levá strana byla široká 250px zatím
+    2-> basic.tpl.html nastavit tak, aby byla obrazovka rozdělena horizontální čárou a levá strana byla široká 250px zatím
     3-> vytvořit css styl pro řádek, abych mohl říci, že využiji celou dostupnou šířku
