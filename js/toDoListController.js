@@ -1,5 +1,5 @@
 
-angular.module('toDoList', []).controller('namesCtrl', function($scope) {
+angular.module('toDoList', []).controller('namesCtrl', function($scope, $timeout) {
 
     $scope.loginUser = false;
     $scope.logInDateTime = null;
@@ -19,29 +19,49 @@ angular.module('toDoList', []).controller('namesCtrl', function($scope) {
         }
     ];
 
-
+    /**
+     *
+     * @param userName
+     * @param password
+     */
     $scope.clickLogIn = function (userName, password) {
         var passwd = MD5(password);
         // zatím je to takhle, jinak zde bude komunikace s DB a ověření, zda takový uživatel vůbec existuje
         _.forEach($scope.allowedLoginUsers, function (user) {
-            if ((user.userName === userName) && (user.passwd === password)){
-                $scope.loginUser = true;
-                $scope.user = user;
-                $scope.logInDateTime = new Date();
+            if (user.userName === userName) {
+                if (user.passwd === password) {
+                    $scope.loginUser = false;
+                    $timeout(function () {
+                        $scope.loginUser = true;
+                        $scope.user = user;
+                        $scope.logInDateTime = new Date();
+                    }, 0);
+                }
             }
-
         })
-
     };
 
+    /**
+     *
+     */
     $scope.clickLogOut = function () {
-        $scope.loginUser = false;
-        $scope.logOutDateTime = new Date();
+        $timeout(function () {
+            $scope.loginUser = false;
+            $scope.logOutDateTime = new Date();
+        },0);
+
 
     //    dořešení pro práci s datem, aby bylo možné říci jak dlouho byl uživatel přihlášen do systému
 
     };
 
+
+    /**
+     *
+     * @param string
+     * @returns {string}
+     * @constructor
+     */
 
     var MD5 = function (string) {
 
