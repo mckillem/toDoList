@@ -33,3 +33,57 @@
 .grey {
     color: #646464;
 }
+
+.width10 {
+    width: 10%;
+    height: 22px;
+    border: 1px solid black;
+}
+
+.width20 {
+    width: 20%;
+    height: 22px;
+    border: 1px solid black;
+}
+
+.width30 {
+    width: 30%;
+    height: 22px;
+    border: 1px solid black;
+}
+
+.width40 {
+    width: 40%;
+    height: 22px;
+    border: 1px solid black;
+}
+
+.width50 {
+    width: 50%;
+    height: 22px;
+}
+
+.width60 {
+    width: 60%;
+    height: 22px;
+}
+
+.width70 {
+    width: 70%;
+    height: 22px;
+}
+
+.width70 {
+    width: 80%;
+    height: 22px;
+}
+
+.width70 {
+    width: 90%;
+    height: 22px;
+}
+
+.width100 {
+    width: auto;
+    height: 22px;
+}
