@@ -36,54 +36,100 @@
 
 .width10 {
     width: 10%;
-    height: 22px;
-    border: 1px solid black;
+    float:left;
 }
 
 .width20 {
     width: 20%;
-    height: 22px;
-    border: 1px solid black;
+    float:left;
 }
 
 .width30 {
     width: 30%;
-    height: 22px;
-    border: 1px solid black;
+    float:left;
 }
 
 .width40 {
     width: 40%;
-    height: 22px;
-    border: 1px solid black;
+    float:left;
 }
 
 .width50 {
     width: 50%;
-    height: 22px;
+    float:left;
 }
 
 .width60 {
     width: 60%;
-    height: 22px;
+    float:left;
 }
 
 .width70 {
     width: 70%;
-    height: 22px;
+    float:left;
 }
 
 .width70 {
     width: 80%;
-    height: 22px;
+    float:left;
 }
 
 .width70 {
     width: 90%;
-    height: 22px;
+    float:left;
 }
 
 .width100 {
     width: 100%;
-    height: 22px;
+    float:left;
+}
+
+.width5 {
+    width: 5%;
+    float:left;
+}
+
+.width15 {
+    width: 15%;
+    float:left;
+}
+
+.width25 {
+    width: 25%;
+    float:left;
+}
+
+.width35 {
+    width: 35%;
+    float:left;
+}
+
+.width45 {
+    width: 45%;
+    float:left;
+}
+
+.width55 {
+    width: 55%;
+    float:left;
+}
+
+.width65 {
+    width: 65%;
+    float:left;
+}
+
+.width75 {
+    width: 75%;
+    float:left;
+}
+
+.width85 {
+    width: 85%;
+    float:left;
+}
+
+.width95 {
+    width: 95%;
+    float:left;
 }
