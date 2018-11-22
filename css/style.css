@@ -34,6 +34,35 @@
     color: #646464;
 }
 
+.Row {
+    padding-top: 4px;
+    padding-bottom: 7px;
+}
+
+.innerLeftSmall {
+    padding-left: 12px;
+}
+
+.innerLeftMedium {
+    padding-left: 24px;
+}
+
+.innerLeftBig {
+    padding-left: 36px;
+}
+
+.innerRightSmall {
+    padding-right: 12px;
+}
+
+.innerRightMedium {
+    padding-right: 24px;
+}
+
+.innerRightBig {
+    padding-right: 36px;
+}
+
 .width10 {
     width: 10%;
     float:left;
