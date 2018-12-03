@@ -165,12 +165,12 @@
 
 #logIn {
     margin: 20% auto;
-    width: 232px;
+    width: 200px;
     padding: 8px;
     border: 1px solid #0000ff;
 }
 
 #logInButton {
-    margin-left: 132px;
+    margin-left: 100px;
     margin-top: 5px;
 }
