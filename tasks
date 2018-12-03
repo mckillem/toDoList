@@ -4,4 +4,4 @@
     1-> login.tpl.html nastavit přihlašovací údaje a tlačítko na přihlášení. vycentrovat do prostředka obrazovky
     2-> basic.tpl.html nastavit tak, aby byla obrazovka rozdělena horizontální čárou a levá strana byla široká 250px zatím
     3-> vytvořit css styl pro řádek, abych mohl říci, že využiji celou dostupnou šířku
-    4-> vytvořit styl overflow
+    4-> vytvořit styl overflow (itnetwork) pokud se text nevejde tak zkrátit po poslední mezeře a přidat tři tečky

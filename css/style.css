@@ -162,3 +162,15 @@
     width: 95%;
     float:left;
 }
+
+#logIn {
+    margin: 20% auto;
+    width: 232px;
+    padding: 8px;
+    border: 1px solid #0000ff;
+}
+
+#logInButton {
+    margin-left: 132px;
+    margin-top: 5px;
+}
