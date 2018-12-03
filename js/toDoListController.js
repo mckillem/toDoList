@@ -27,7 +27,7 @@ angular.module('toDoList', []).controller('toDoListController', function($scope,
     $scope.clickLogIn = function (userName, password) {
         var passwd = MD5(password);
         // zatím je to takhle, jinak zde bude komunikace s DB a ověření, zda takový uživatel vůbec existuje
-        _.forEach($scope.allowedLoginUsers, function (user) {
+        for (user of $scope.allowedLoginUsers) {
             if (user.userName === userName) {
                 if (user.passwd === password) {
                     $scope.loginUser = false;
@@ -38,7 +38,21 @@ angular.module('toDoList', []).controller('toDoListController', function($scope,
                     }, 0);
                 }
             }
-        })
+        }
+
+
+        /*_.forEach($scope.allowedLoginUsers, function (user) {
+            if (user.userName === userName) {
+                if (user.passwd === password) {
+                    $scope.loginUser = false;
+                    $timeout(function () {
+                        $scope.loginUser = true;
+                        $scope.user = user;
+                        $scope.logInDateTime = new Date();
+                    }, 0);
+                }
+            }
+        })*/
     };
 
     /**

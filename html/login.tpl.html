@@ -1,10 +1,10 @@
 <div id="logIn">
     <form id="logInForm" action="">
         <label for="userName">User name: </label><br>
-        <input type="text" name="userName" id="userName" size="15"><br>
+        <input type="text" name="userName" id="userName" size="15" ng-model="userName"><br>
         <label for="password">Password: </label><br>
-        <input type="password" name="password" id="password" size="15"><br>
-        <input type="submit" value="Log in" id="logInButton">
+        <input type="password" name="password" id="password" size="15" ng-model="password"><br>
+        <input type="submit" value="Log in" id="logInButton" ng-click="clickLogIn(userName,password)">
     </form>
 </div>
 
