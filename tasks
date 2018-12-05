@@ -2,8 +2,7 @@
 úkoly na středu 5.12.2018
 PRŮBĚŽNĚ PO FUNKČNÍCH ČÁSTECH TLAČIT NA GITHUB
 --rozjet tlačítka
-2->
-    V levé části menu (posloupná id, aby odhlášení bylo vždy nakonci) pomocí ng-repeat.
+2->V levé části menu (posloupná id, aby odhlášení bylo vždy nakonci) pomocí ng-repeat.
     při kliku na položku se zpropaguje na hlavní obrazovku.
     první uživatel a poslední odhlásit
      v angularu pole objektů. Uživatel, seznam projektů
