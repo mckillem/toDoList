@@ -1,6 +1,14 @@
 
-úkoly na neděli 18.11.2018
-
-    2-> basic.tpl.html nastavit tak, aby byla obrazovka rozdělena horizontální čárou a levá strana byla široká 250px zatím
-    3-> vytvořit css styl pro řádek, abych mohl říci, že využiji celou dostupnou šířku
-    4-> vytvořit styl overflow (itnetwork) pokud se text nevejde tak zkrátit po poslední mezeře a přidat tři tečky
+úkoly na středu 5.12.2018
+PRŮBĚŽNĚ PO FUNKČNÍCH ČÁSTECH TLAČIT NA GITHUB
+--rozjet tlačítka
+2->
+    V levé části menu (posloupná id, aby odhlášení bylo vždy nakonci) pomocí ng-repeat.
+    při kliku na položku se zpropaguje na hlavní obrazovku.
+    první uživatel a poslední odhlásit
+     v angularu pole objektů. Uživatel, seznam projektů
+     (založit projekt==objeví se okno s názvem, popisem a kódem a skrytým stavem.
+     Když dám uložit, tak se projekt přidá v levo do seznamu projektů.
+     Smazat po uložení z modulů?!?. Uložit do projects.json), odhlásit
+4-> vytvořit styl overflow (itnetwork) pokud se text nevejde tak
+ zkrátit po poslední mezeře a přidat tři tečky

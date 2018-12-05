@@ -174,3 +174,12 @@
     margin-left: 100px;
     margin-top: 5px;
 }
+
+#menu {
+    background: darkorchid;
+    height: 200px;
+}
+
+#content {
+    background: #9fcdff;
+}

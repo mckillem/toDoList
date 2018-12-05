@@ -2,30 +2,44 @@
 <html lang="en" ng-app="toDoList">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>ToDoList</title>
-        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/angular.min.1.7.5.js"></script>
         <script type="text/javascript" src="js/toDoListController.js"></script>
         <script type="text/javascript" src="js/Services/globalServices.js"></script>
         <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+        <script>window.jQuery || document.write('<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"><\/script>')</script>
+
         <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+
 
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.min.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     </head>
     <body>
-        <div class="uppercase red bold">logo</div>
-        <hr>
-        <div  ng-controller="toDoListController">
+        <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+            <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">User name</a>
+            <ul class="navbar-nav px-3">
+                <li class="nav-item text-nowrap">
+                    <a class="nav-link" href="#">Sign out</a>
+                </li>
+            </ul>
+        </nav>
+        <!--<div ng-controller="toDoListController">-->
             <!--Zde bude ta požadovaná stránka-->
 
-            <div class="left" ng-if="!loginUser">
-                <div ng-include="'html/login.tpl.html'" onload="expression" autoscroll="expression"></div>
-                <!--<iframe src="html/login.tpl.html"></iframe>-->
-            </div>
-            <div class="left" ng-if="loginUser">
-                <div ng-include="'html/basic.tpl.html'"></div>
-                <!--<iframe src="html/basic.tpl.html"></iframe>-->
-            </div>
-
-        </div>
+            <!--<div class="left" ng-if="!loginUser">-->
+            <!--<div ng-include="'html/login.tpl.html'" onload="expression" autoscroll="expression"></div>-->
+            <!--&lt;!&ndash;<iframe src="html/login.tpl.html"></iframe>&ndash;&gt;-->
+            <!--</div>-->
+            <!--<div class="left" ng-if="loginUser"></div>-->
+            <div ng-include="'html/basic.tpl.html'"></div>
+            <!--<iframe src="html/basic.tpl.html"></iframe>-->
+        <!--</div>-->
     </body>
 </html>
