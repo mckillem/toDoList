@@ -32,16 +32,18 @@
             </ul>
         </nav>
 
-        <!--<div ng-controller="toDoListController">-->
+        <div ng-controller="toDoListController">
             <!--Zde bude ta požadovaná stránka-->
 
-            <!--<div class="left" ng-if="!loginUser">-->
-            <!--<div ng-include="'html/login.tpl.html'" onload="expression" autoscroll="expression"></div>-->
+            <div class="left" ng-if="!loginUser">
+            <div ng-include="'html/login.tpl.html'" onload="expression" autoscroll="expression"></div>
             <!--&lt;!&ndash;<iframe src="html/login.tpl.html"></iframe>&ndash;&gt;-->
-            <!--</div>-->
-            <!--<div class="left" ng-if="loginUser"></div>-->
-            <div ng-include="'html/basic.tpl.html'"></div>
+            </div>
+            <div class="left" ng-if="loginUser">
+                <div ng-include="'html/basic.tpl.html'"></div>
+            </div>
+
             <!--<iframe src="html/basic.tpl.html"></iframe>-->
-        <!--</div>-->
+        </div>
     </body>
 </html>

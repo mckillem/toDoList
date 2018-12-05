@@ -2,16 +2,31 @@ var toDoList = angular.module('toDoList', ['ngRoute']);
 
 toDoList.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
+        .when('/basic', {
+            templateUrl: 'html/basic.tpl.html'
+        })
         .when('/dashboard', {
             templateUrl: 'html/dashboard.html'
         })
         .when('/projects', {
             templateUrl: 'html/projects.html'
         })
+        // .otherwise({
+        //     redirectTo: 'html/login.tpl.html'
 }])
 
 toDoList.controller('toDoListController', ['$scope', function ($scope) {
+    $scope.loginUser = false;
+    console.log($scope.loginUser);
 
+
+    $scope.clickLogIn = function (userName, password) {
+
+        if (userName === "Ladislav") {
+            $scope.loginUser = true;
+
+        }
+    }
 }])
 
 //
