@@ -23,25 +23,16 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
 
     });
     $scope.clickLogIn = function (userName, password) {
-        console.log(userName)
 
         for (let i = 0; i < $scope.users.length; i++) {
             if ($scope.users[i].userName === userName && $scope.users[i].password === password) {
                 $scope.loginUser = true;
+                $scope.userName = userName;
             }
         }
     }
 }]);
 
-// toDoList.directive('userName', [function () {
-//     return {
-//         restrict: 'E',
-//         scope: {
-//             userName: '='
-//         },
-//         templateUrl: 'html/basic.tpl.html',
-//     };
-// }]);
 
 //
 // angular.module('toDoList', []).controller('toDoListController', function($scope, $timeout) {
