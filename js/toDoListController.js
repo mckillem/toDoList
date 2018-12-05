@@ -15,19 +15,33 @@ toDoList.config(['$routeProvider', function ($routeProvider) {
         //     redirectTo: 'html/login.tpl.html'
 }])
 
-toDoList.controller('toDoListController', ['$scope', function ($scope) {
+toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, $http) {
     $scope.loginUser = false;
-    console.log($scope.loginUser);
 
+    $http.get('files/users.json').then(function (response) {
+        $scope.users = response.data;
 
+    });
     $scope.clickLogIn = function (userName, password) {
+        console.log(userName)
 
-        if (userName === "Ladislav") {
-            $scope.loginUser = true;
-
+        for (let i = 0; i < $scope.users.length; i++) {
+            if ($scope.users[i].userName === userName && $scope.users[i].password === password) {
+                $scope.loginUser = true;
+            }
         }
     }
-}])
+}]);
+
+// toDoList.directive('userName', [function () {
+//     return {
+//         restrict: 'E',
+//         scope: {
+//             userName: '='
+//         },
+//         templateUrl: 'html/basic.tpl.html',
+//     };
+// }]);
 
 //
 // angular.module('toDoList', []).controller('toDoListController', function($scope, $timeout) {
