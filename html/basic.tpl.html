@@ -2,6 +2,8 @@
     <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
             <div class="sidebar-sticky">
+                <h2>{{userName}}</h2>
+
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link active" href="#!/dashboard">
@@ -33,11 +35,10 @@
                             Integrations
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sign out</a>
+                    </li>
                 </ul>
-                <h3>Jméno uživatele: {{userName}}</h3>
-                <user-name users="users"></user-name>
-
-
             </div>
         </nav>
 

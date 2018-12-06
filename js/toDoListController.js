@@ -16,12 +16,13 @@ toDoList.config(['$routeProvider', function ($routeProvider) {
 }])
 
 toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, $http) {
-    $scope.loginUser = false;
+    $scope.loginUser = true;
 
+    // Loads user data from a file
     $http.get('files/users.json').then(function (response) {
         $scope.users = response.data;
-
     });
+
     $scope.clickLogIn = function (userName, password) {
 
         for (let i = 0; i < $scope.users.length; i++) {
@@ -31,8 +32,9 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
             }
         }
     }
-}]);
 
+
+}]);
 
 //
 // angular.module('toDoList', []).controller('toDoListController', function($scope, $timeout) {

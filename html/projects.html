@@ -1,6 +1,48 @@
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Projects</h1>
-        <input type="button" value="New project">
+        <!-- Button to open the modal login form -->
+        <button onclick="document.getElementById('id01').style.display='block'" style="margin-left: 100px; width:auto;">New project</button>
+
+        <div id="id01" class="modal">
+
+            <form class="modal-content animate" action="/action_page.php">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
+                </div>
+
+                <div class="container">
+                    <label for="userName"><b>Username</b></label>
+                    <input type="text" placeholder="Enter username" name="userName" required>
+
+                    <label for="description"><b>Description</b></label>
+                    <input type="text" placeholder="Enter description" name="description" required>
+
+                    <label for="code"><b>Code</b></label>
+                    <input type="text" placeholder="Enter code" name="code" required>
+
+                    <label hidden>STATE</label>
+
+                    <button type="submit">Save</button>
+
+                </div>
+
+                <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <script>
+            // Get the modal
+            var modal = document.getElementById('id01');
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
     </div>
 </main>
