@@ -33,6 +33,19 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
         }
     }
 
+    // Loads project data from a file
+    $http.get('files/projects.json').then(function (response) {
+        $scope.projects = response.data;
+    });
+
+    $scope.addNewProject = function () {
+        $scope.projects.push({
+            projectName: "projectName",
+            userName: "userName",
+            description: "description",
+            code: "code"
+        })
+    }
 
 }]);
 

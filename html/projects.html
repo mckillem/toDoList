@@ -6,12 +6,15 @@
 
         <div id="id01" class="modal">
 
-            <form class="modal-content animate" action="/action_page.php">
+            <form class="modal-content animate" ng-submit="addNewProject()">
                 <div class="imgcontainer">
                     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
                 </div>
 
                 <div class="container">
+                    <label for="projectName"><b>Project name</b></label>
+                    <input type="text" placeholder="Enter username" name="projectName" required>
+
                     <label for="userName"><b>Username</b></label>
                     <input type="text" placeholder="Enter username" name="userName" required>
 
@@ -44,5 +47,16 @@
                 }
             }
         </script>
+
+    </div>
+    <div>
+        <ul id="projects-list">
+            <li ng-repeat="project in projects">
+                <h3>{{project.projectName}}</h3>
+                <p>{{project.userName}} - {{project.description}} - {{project.code}}</p>
+                <!--<div class="remove" ng-click="removeNinja(ninja)">x</div>-->
+                <!--<span class="belt" style="background: {{ninja.belt}};">{{ninja.belt}} belt</span>-->
+            </li>
+        </ul>
     </div>
 </main>
