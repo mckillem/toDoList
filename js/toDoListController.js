@@ -37,6 +37,7 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
 
         let response = await $http.get('files/users.json');
         $scope.users = response.data;
+
     };
 
     // Loads project data from a file
