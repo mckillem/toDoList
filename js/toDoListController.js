@@ -33,6 +33,12 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
         }
     }
 
+    async function loadData(){
+
+        let response = await $http.get('files/users.json');
+        $scope.users = response.data;
+    };
+
     // Loads project data from a file
     $http.get('files/projects.json').then(function (response) {
         $scope.projects = response.data;
