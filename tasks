@@ -26,3 +26,33 @@ PRŮBĚŽNĚ PO FUNKČNÍCH ČÁSTECH TLAČIT NA GITHUB
 
 4-> vytvořit styl overflow (itnetwork) pokud se text nevejde tak
  zkrátit po poslední mezeře a přidat tři tečky
+
+
+ var app = angular.module('putserviceApp', []);
+
+ app.controller('putserviceCtrl', function ($scope, $http) {
+
+ // Simple Post request example:
+
+ var url = 'posturl', data = 'parameters',config='contenttype';
+
+ $http.post(url, data, config).then(function (response) {
+
+ // This function handles success
+
+ }, function (response) {
+
+ // this function handles error
+
+ });
+
+ });
+
+ JSON.stringify
+
+
+
+var res = $http.post('/savecompany_json', dataObj);
+res.success(function(data, status, headers, config) {
+$scope.message = data;
+});

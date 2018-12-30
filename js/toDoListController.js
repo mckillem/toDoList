@@ -33,25 +33,31 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
         }
     }
 
-    async function loadData(){
+    // // Loads project data from a file
+    // $http.get('files/projects.json').then(function (response) {
+    //     $scope.projects = response.data;
+    // });
 
-        let response = await $http.get('files/users.json');
-        $scope.users = response.data;
+    // Function to get projects details from the database
+    getInfo();
 
-    };
+    function getInfo() {
+// Sending request to EmpDetails.php files
+        $http.post('databaseFiles/projects.php').then(function (response) {
+// Stored the returned data into scope
+            $scope.projects = response.data;
+        });
+    }
 
-    // Loads project data from a file
-    $http.get('files/projects.json').then(function (response) {
-        $scope.projects = response.data;
-    });
 
     $scope.addNewProject = function () {
-        $scope.projects.push({
-            projectName: "projectName",
-            userName: "userName",
-            description: "description",
-            code: "code"
-        })
+        var dataObj = {
+            name : "jo",
+            employees : "ne",
+            headoffice : "mozna"
+        };
+
+
     }
 
 }]);
