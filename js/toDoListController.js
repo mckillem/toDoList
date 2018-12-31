@@ -38,10 +38,10 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
     //     $scope.projects = response.data;
     // });
 
-    // Function to get projects details from the database
-    getInfo();
+    // Function to get projects from the database
+    getProject();
 
-    function getInfo() {
+    function getProject() {
 // Sending request to EmpDetails.php files
         $http.post('databaseFiles/projects.php').then(function (response) {
 // Stored the returned data into scope
@@ -49,16 +49,42 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
         });
     }
 
+    // insert project
 
-    $scope.addNewProject = function () {
-        var dataObj = {
-            name : "jo",
-            employees : "ne",
-            headoffice : "mozna"
-        };
-
-
+// Setting default value of gender
+    $scope.empInfo = {'gender': 'male'};
+// Enabling show_form variable to enable Add employee button
+    $scope.show_form = true;
+// Function to add toggle behaviour to form
+    $scope.formToggle = function () {
+        $('#empForm').slideToggle();
+        $('#editForm').css('display', 'none');
     }
+
+    $scope.insertProject = function (project) {
+        $http.post('databaseFiles/insertProject.php', {
+            "name": project.name,
+            "email": project.email,
+            "address": project.address,
+            "gender": project.gender
+        }).then(function (data) {
+            if (data == true) {
+                getProject();
+                $('#empForm').css('display', 'none');
+            }
+        });
+    }
+
+    // delete project nefunguje
+    $scope.deleteProject = function (project) {
+        $http.post('databaseFiles/deleteProject.php', {"del_id": project.code}).then(function (response) {
+            console.log(response.data)
+            if (response.data == true) {
+                getProject();
+            }
+        });
+    }
+
 
 }]);
 

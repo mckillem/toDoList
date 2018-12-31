@@ -267,6 +267,14 @@
 }
 
 /*
+ * new project button
+ */
+
+#newProjectBtn {
+    width: 150px;
+}
+
+/*
  * New project window
  */
 

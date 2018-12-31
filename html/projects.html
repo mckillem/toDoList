@@ -1,66 +1,26 @@
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Projects</h1>
-        <!-- Button to open the modal login form -->
-        <button onclick="document.getElementById('id01').style.display='block'" style="margin-left: 100px; width:auto;">New project</button>
+        <button id="newProjectBtn" class="btn btn-primary" ng-show="show_form" ng-click="formToggle()">New project</button>
+                    <!--<div class="alert alert-default input-group search-box">-->
+<!--<span class="input-group-btn">-->
+<!--<input type="text" class="form-control" placeholder="Search Employee Details Into Database..." ng-model="search_query">-->
+<!--</span>-->
+                    <!--</div>-->
 
-        <div id="id01" class="modal">
-
-            <form class="modal-content animate" ng-submit="addNewProject()">
-                <div class="imgcontainer">
-                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">X</span>
-                </div>
-
-                <div class="container">
-                    <label for="projectName"><b>Project name</b></label>
-                    <input type="text" placeholder="Enter username" name="projectName" required>
-
-                    <label for="userName"><b>Username</b></label>
-                    <input type="text" placeholder="Enter username" name="userName" required>
-
-                    <label for="description"><b>Description</b></label>
-                    <input type="text" placeholder="Enter description" name="description" required>
-
-                    <label for="code"><b>Code</b></label>
-                    <input type="text" placeholder="Enter code" name="code" required>
-
-                    <label hidden>STATE</label>
-
-                    <button type="submit">Save</button>
-
-                </div>
-
-                <div class="container" style="background-color:#f1f1f1">
-                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                </div>
-            </form>
         </div>
 
-        <script>
-            // Get the modal
-            var modal = document.getElementById('id01');
+    <div class="col-md-9 mx-auto">
 
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-        </script>
+        <!-- Include form template which is used to insert data into database -->
+        <div ng-include="'html/form.html'"></div>
 
+        <!-- Include form template which is used to edit and update data into database -->
+        <div ng-include="'html/editForm.html'"></div>
     </div>
-    <!--<div>-->
-        <!--<ul id="projects-list">-->
-            <!--<li ng-repeat="project in projects">-->
-                <!--<h3>{{project.projectName}}</h3>-->
-                <!--<p>{{project.userName}} - {{project.description}} - {{project.code}}</p>-->
-                <!--&lt;!&ndash;<div class="remove" ng-click="removeNinja(ninja)">x</div>&ndash;&gt;-->
-                <!--&lt;!&ndash;<span class="belt" style="background: {{ninja.belt}};">{{ninja.belt}} belt</span>&ndash;&gt;-->
-            <!--</li>-->
-        <!--</ul>-->
-    <!--</div>-->
+    <div class="clearfix"></div>
 
-    <!-- Table to show employee detalis -->
+    <!-- Table to show employee details -->
     <div class="table-responsive">
         <table class="table table-hover">
             <tr>
@@ -80,14 +40,16 @@
                 <td>{{project.code}}</td>
 
                 <td>
-                    <button class="btn btn-warning" ng-click="editInfo(detail)" title="Edit"><span
+                    <button class="btn btn-warning" ng-click="editProject(project)" title="Edit"><span
                             class="glyphicon glyphicon-edit"></span></button>
                 </td>
                 <td>
-                    <button class="btn btn-danger" ng-click="deleteInfo(detail)" title="Delete"><span
+                    <button class="btn btn-danger" ng-click="deleteProject(project)" title="Delete"><span
                             class="glyphicon glyphicon-trash"></span></button>
                 </td>
             </tr>
         </table>
     </div>
+
+
 </main>
