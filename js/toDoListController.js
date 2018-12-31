@@ -63,28 +63,50 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
 
     $scope.insertProject = function (project) {
         $http.post('databaseFiles/insertProject.php', {
-            "name": project.name,
-            "email": project.email,
-            "address": project.address,
-            "gender": project.gender
-        }).then(function (data) {
-            if (data == true) {
+            "projectName": project.projectName,
+            "userName": project.userName,
+            "description": project.description,
+            "code": project.code
+        }).then(function (response) {
+            if (response.data == true) {
                 getProject();
                 $('#empForm').css('display', 'none');
             }
         });
     }
 
-    // delete project nefunguje
+    // delete project
     $scope.deleteProject = function (project) {
         $http.post('databaseFiles/deleteProject.php', {"del_id": project.code}).then(function (response) {
-            console.log(response.data)
             if (response.data == true) {
                 getProject();
             }
         });
     }
 
+    $scope.currentProject = {};
+    $scope.editInfo = function (project) {
+        $scope.currentProject = project;
+        $('#empForm').slideUp();
+        $('#editForm').slideToggle();
+    }
+    $scope.updateProject = function (project) {
+        $http.post('databaseFiles/updateProject.php', {
+            "id": project.emp_id,
+            "projectName": project.projectName,
+            "userName": project.userName,
+            "description": project.description,
+            "code": project.code
+        }).then(function (response) {
+            $scope.show_form = true;
+            if (response.data == true) {
+                getProject();
+            }
+        });
+    }
+    $scope.updateMsg = function (emp_id) {
+        $('#editForm').css('display', 'none');
+    }
 
 }]);
 

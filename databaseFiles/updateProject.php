@@ -5,12 +5,12 @@ require_once 'database_connections.php';
 $data = json_decode(file_get_contents("php://input")); 
 // Escaping special characters from updated data
 $id = mysqli_real_escape_string($con, $data->id);
-$name = mysqli_real_escape_string($con, $data->name);
-$email = mysqli_real_escape_string($con, $data->email);
-$gender = mysqli_real_escape_string($con, $data->gender);
-$address = mysqli_real_escape_string($con, $data->address);
+$projectName = mysqli_real_escape_string($con, $data->projectName);
+$userName = mysqli_real_escape_string($con, $data->userName);
+$description = mysqli_real_escape_string($con, $data->description);
+$code = mysqli_real_escape_string($con, $data->code);
 // mysqli query to insert the updated data
-$query = "UPDATE emp_details SET emp_name='$name',emp_email='$email',emp_gender='$gender',emp_address='$address' WHERE emp_id=$id";
+$query = "UPDATE projects SET projectName='$projectName',userName='$userName',description='$description',code='$code' WHERE $code=$id";
 mysqli_query($con, $query);
 echo true;
 ?>
