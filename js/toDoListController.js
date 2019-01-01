@@ -17,7 +17,6 @@ toDoList.config(['$routeProvider', function ($routeProvider) {
 
 toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, $http) {
     $scope.loginUser = true;
-
     // Loads user data from a file
     $http.get('files/users.json').then(function (response) {
         $scope.users = response.data;
@@ -45,39 +44,43 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
 // Sending request to EmpDetails.php files
         $http.post('databaseFiles/projects.php').then(function (response) {
 // Stored the returned data into scope
-            $scope.projects = response.data;
+            $scope.Projects = response.data;
         });
     }
 
-    // insert project
 
-// Setting default value of gender
-    $scope.empInfo = {'gender': 'male'};
 // Enabling show_form variable to enable Add employee button
     $scope.show_form = true;
+    $scope.showForm = false;
+    $scope.showEditForm = false;
 // Function to add toggle behaviour to form
     $scope.formToggle = function () {
-        $('#empForm').slideToggle();
+        $scope.showForm = true;
+        $('#form').slideToggle();
         $('#editForm').css('display', 'none');
     }
+    // insert project
 
     $scope.insertProject = function (project) {
         $http.post('databaseFiles/insertProject.php', {
-            "projectName": project.projectName,
-            "userName": project.userName,
+            "id_project": project.id_project,
+            "id_user": project.id_user,
+            "created_id": project.created_id,
+            "name": project.name,
             "description": project.description,
-            "code": project.code
+            "project_code": project.project_code,
+            "last_serial_number": project.last_serial_number
         }).then(function (response) {
             if (response.data == true) {
                 getProject();
-                $('#empForm').css('display', 'none');
+                $('#form').css('display', 'none');
             }
         });
     }
 
     // delete project
     $scope.deleteProject = function (project) {
-        $http.post('databaseFiles/deleteProject.php', {"del_id": project.code}).then(function (response) {
+        $http.post('databaseFiles/deleteProject.php', {"del_id": project.id_project}).then(function (response) {
             if (response.data == true) {
                 getProject();
             }
@@ -85,18 +88,22 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
     }
 
     $scope.currentProject = {};
-    $scope.editInfo = function (project) {
+    $scope.editProject = function (project) {
         $scope.currentProject = project;
-        $('#empForm').slideUp();
+        $scope.showEditForm = true;
+
+        $('#form').slideUp();
         $('#editForm').slideToggle();
     }
     $scope.updateProject = function (project) {
         $http.post('databaseFiles/updateProject.php', {
-            "id": project.emp_id,
-            "projectName": project.projectName,
-            "userName": project.userName,
+            "id_project": project.id_project,
+            "id_user": project.id_user,
+            "created_id": project.created_id,
+            "name": project.name,
             "description": project.description,
-            "code": project.code
+            "project_code": project.project_code,
+            "last_serial_number": project.last_serial_number
         }).then(function (response) {
             $scope.show_form = true;
             if (response.data == true) {
@@ -104,7 +111,7 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
             }
         });
     }
-    $scope.updateMsg = function (emp_id) {
+    $scope.updateMsg = function (id_project) {
         $('#editForm').css('display', 'none');
     }
 

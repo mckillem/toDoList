@@ -2,7 +2,7 @@
 // Including database connections
 require_once 'database_connections.php'; 
 // mysqli query to fetch all data from database
-$query = "SELECT * from projects ORDER BY code ASC";
+$query = "SELECT * from Projects ORDER BY id_project ASC";
 $result = mysqli_query($con, $query);
 $arr = array();
 if(mysqli_num_rows($result) != 0) {

@@ -1,7 +1,8 @@
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Projects</h1>
-        <button id="newProjectBtn" class="btn btn-primary" ng-show="show_form" ng-click="formToggle()">New project</button>
+        <button id="newProjectBtn" class="btn btn-primary" ng-show="show_form" ng-click="formToggle()">New project <span
+                class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
                     <!--<div class="alert alert-default input-group search-box">-->
 <!--<span class="input-group-btn">-->
 <!--<input type="text" class="form-control" placeholder="Search Employee Details Into Database..." ng-model="search_query">-->
@@ -24,20 +25,23 @@
     <div class="table-responsive">
         <table class="table table-hover">
             <tr>
-                <th>User name</th>
-                <th>Project name</th>
-                <th>Description</th>
-                <th>Code</th>
-                <th></th>
-                <th></th>
-                <th></th>
+                <th>id_project</th>
+                <th>id_user</th>
+                <th>created_id</th>
+                <th>name</th>
+                <th>description</th>
+                <th>project_code</th>
+                <th>last_serial_number</th>
             </tr>
-            <tr ng-repeat="project in projects | filter:search_query">
+            <tr ng-repeat="project in Projects | filter:search_query">
                 <td>
-                    <span>{{project.userName}}</span></td>
-                <td>{{project.projectName}}</td>
+                    <span>{{project.id_project}}</span></td>
+                <td>{{project.id_user}}</td>
+                <td>{{project.created_id}}</td>
+                <td>{{project.name}}</td>
                 <td>{{project.description}}</td>
-                <td>{{project.code}}</td>
+                <td>{{project.project_code}}</td>
+                <td>{{project.last_serial_number}}</td>
 
                 <td>
                     <button class="btn btn-warning" ng-click="editProject(project)" title="Edit"><span

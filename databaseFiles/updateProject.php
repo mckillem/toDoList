@@ -4,13 +4,15 @@ require_once 'database_connections.php';
 // Fetching the updated data & storin in new variables
 $data = json_decode(file_get_contents("php://input")); 
 // Escaping special characters from updated data
-$id = mysqli_real_escape_string($con, $data->id);
-$projectName = mysqli_real_escape_string($con, $data->projectName);
-$userName = mysqli_real_escape_string($con, $data->userName);
+$id_project = mysqli_real_escape_string($con, $data->id_project);
+$id_user = mysqli_real_escape_string($con, $data->id_user);
+$created_id = mysqli_real_escape_string($con, $data->created_id);
+$name = mysqli_real_escape_string($con, $data->name);
 $description = mysqli_real_escape_string($con, $data->description);
-$code = mysqli_real_escape_string($con, $data->code);
+$project_code = mysqli_real_escape_string($con, $data->project_code);
+$last_serial_number = mysqli_real_escape_string($con, $data->last_serial_number);
 // mysqli query to insert the updated data
-$query = "UPDATE projects SET projectName='$projectName',userName='$userName',description='$description',code='$code' WHERE $code=$id";
+$query = "UPDATE Projects SET id_project='$id_project',id_user='$id_user',created_id='$created_id',name='$name',description='$description',project_code='$project_code',last_serial_number='$last_serial_number' WHERE $id_project=$id_project";
 mysqli_query($con, $query);
 echo true;
 ?>
