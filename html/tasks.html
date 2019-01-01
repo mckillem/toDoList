@@ -1,0 +1,65 @@
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Tasks</h1>
+        <button id="newProjectBtn" class="btn btn-primary" ng-show="show_form" ng-click="taskToggle()">New task <span
+                class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+        <!--<div class="alert alert-default input-group search-box">-->
+        <!--<span class="input-group-btn">-->
+        <!--<input type="text" class="form-control" placeholder="Search Employee Details Into Database..." ng-model="search_query">-->
+        <!--</span>-->
+        <!--</div>-->
+
+    </div>
+
+    <div class="col-md-9 mx-auto">
+
+        <!-- Include form template which is used to insert data into database -->
+        <div ng-include="'html/taskForm.html'"></div>
+
+        <!-- Include form template which is used to edit and update data into database -->
+        <div ng-include="'html/editTaskForm.html'"></div>
+    </div>
+    <div class="clearfix"></div>
+
+    <!-- Table to show employee details -->
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <tr>
+                <th>id_task</th>
+                <th>name</th>
+                <th>description</th>
+                <th>created_id</th>
+                <th>code</th>
+                <th>created_date</th>
+                <th>estimate</th>
+                <th>remaining</th>
+                <th>worked</th>
+                <th>id_user</th>
+            </tr>
+            <tr ng-repeat="task in Tasks | filter:search_query">
+                <td>{{task.id_task}}</td>
+                <td>{{task.name}}</td>
+                <td>{{task.description}}</td>
+                <td>{{task.created_id}}</td>
+                <td>{{task.code}}</td>
+                <td>{{task.created_date}}</td>
+                <td>{{task.estimate}}</td>
+                <td>{{task.remaining}}</td>
+                <td>{{task.worked}}</td>
+                <td>{{task.id_user}}</td>
+
+
+                <td>
+                    <button class="btn btn-warning" ng-click="editTask(task)" title="Edit"><span
+                            class="glyphicon glyphicon-edit"></span></button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" ng-click="deleteTask(task)" title="Delete"><span
+                            class="glyphicon glyphicon-trash"></span></button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+</main>

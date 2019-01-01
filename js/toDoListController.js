@@ -11,6 +11,9 @@ toDoList.config(['$routeProvider', function ($routeProvider) {
         .when('/projects', {
             templateUrl: 'html/projects.html'
         })
+        .when('/tasks', {
+            templateUrl: 'html/tasks.html'
+        })
         // .otherwise({
         //     redirectTo: 'html/login.tpl.html'
 }])
@@ -113,6 +116,90 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
     }
     $scope.updateMsg = function (id_project) {
         $('#editForm').css('display', 'none');
+    }
+
+    // Function to get tasks from the database
+    getTask();
+
+    function getTask() {
+// Sending request to EmpDetails.php files
+        $http.post('databaseFiles/tasks.php').then(function (response) {
+// Stored the returned data into scope
+            $scope.Tasks = response.data;
+        });
+    }
+
+    //Enabling show_form variable to enable Add employee button
+    $scope.showTaskForm = false;
+    $scope.showEditTaskForm = false;
+// Function to add toggle behaviour to form
+    $scope.taskToggle = function () {
+        $scope.showTaskForm = true;
+        $('#taskForm').slideToggle();
+        $('#editTaskForm').css('display', 'none');
+    }
+
+    // insert task
+
+    $scope.insertTask = function (task) {
+        $http.post('databaseFiles/insertTask.php', {
+            "id_task": task.id_task,
+            "name": task.name,
+            "description": task.description,
+            "created_id": task.created_id,
+            "code": task.code,
+            "created_date": task.created_date,
+            "estimate": task.estimate,
+            "remaining": task.remaining,
+            "worked": task.worked,
+            "id_user": task.id_user
+        }).then(function (response) {
+            if (response.data == true) {
+                getTask();
+                $('#taskForm').css('display', 'none');
+            }
+        });
+    }
+
+    // delete task
+    $scope.deleteTask = function (task) {
+        $http.post('databaseFiles/deleteTask.php', {"del_id": task.id_task}).then(function (response) {
+            if (response.data == true) {
+                getTask();
+            }
+        });
+    }
+
+    $scope.currentTask = {};
+    $scope.editTask = function (task) {
+        $scope.currentTask = task;
+        $scope.showEditTaskForm = true;
+
+        $('#taskForm').slideUp();
+        $('#editTaskForm').slideToggle();
+    }
+    $scope.updateTask = function (task) {
+        $http.post('databaseFiles/updateTask.php', {
+            "id_task": task.id_task,
+            "name": task.name,
+            "description": task.description,
+            "created_id": task.created_id,
+            "code": task.code,
+            "created_date": task.created_date,
+            "estimate": task.estimate,
+            "remaining": task.remaining,
+            "worked": task.worked,
+            "id_user": task.id_user
+        }).then(function (response) {
+            $scope.show_form = true;
+            if (response.data == true) {
+                getTask();
+            }
+        });
+    }
+
+    $scope.updateMsg = function (id_task) {
+        $('#editTaskForm').css('display', 'none');
     }
 
 }]);
