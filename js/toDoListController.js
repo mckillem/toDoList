@@ -14,31 +14,39 @@ toDoList.config(['$routeProvider', function ($routeProvider) {
         .when('/tasks', {
             templateUrl: 'html/tasks.html'
         })
+        // .when('/login', {
+        //     templateUrl: 'index.html'
+        // })
         // .otherwise({
-        //     redirectTo: 'html/login.tpl.html'
+        //     redirectTo: 'index.html'
+        // })
 }])
 
 toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, $http) {
-    $scope.loginUser = true;
+    $scope.loginUser = false;
     // Loads user data from a file
-    $http.get('files/users.json').then(function (response) {
+    $http.get('databaseFiles/users.php').then(function (response) {
         $scope.users = response.data;
+    });
+
+    $http.get('databaseFiles/login.php').then(function (response) {
+        $scope.login = response.data;
     });
 
     $scope.clickLogIn = function (userName, password) {
 
-        for (let i = 0; i < $scope.users.length; i++) {
-            if ($scope.users[i].userName === userName && $scope.users[i].password === password) {
+        for (let i = 0; i < $scope.login.length; i++) {
+            if ($scope.login[i].user_name === userName && $scope.login[i].password === password) {
                 $scope.loginUser = true;
                 $scope.userName = userName;
             }
         }
     }
 
-    // // Loads project data from a file
-    // $http.get('files/projects.json').then(function (response) {
-    //     $scope.projects = response.data;
-    // });
+    $scope.logOut = function () {
+        $scope.loginUser = false;
+    }
+
 
     // Function to get projects from the database
     getProject();
