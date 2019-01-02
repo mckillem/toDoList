@@ -56,7 +56,7 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
                 //         $scope.userName = uzivatel.first_name + ' ' + uzivatel.last_name;
                 //     }
                 // }
-                for(user of $scope.users) {
+                for (user of $scope.users) {
                     if($scope.login[i].id_user === user.id_user) {
                         $scope.userName = user.first_name + ' ' + user.last_name;
                     }
