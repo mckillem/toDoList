@@ -1,23 +1,14 @@
 <!-- Form used to add new entries of employee in database -->
 <form class="form-horizontal alert alert-warning" name="empList" id="form" ng-show="showForm" ng-submit="insertProject(empInfo)"  >
-	<div class="form-group">
-		<label for="id_project">id_project:</label>
-		<input type="text" name="id_project" class="form-control" placeholder="id_project" ng-model="empInfo.id_project" value="" autofocus required />
-	</div>
+	
 	<div class="form-group">
 		<p class="text-danger" ng-show="empList.emp_name.$dirty">Name field is Empty!</p>
 	</div>
-	<div class="form-group">
-		<label for="id_user">id_user:</label>
-		<input type="text" name="id_user" class="form-control" placeholder="id_user" ng-model="empInfo.id_user" autofocus required />
-	</div>
+
 	<div class="form-group">
 		<p class="text-danger" ng-show="empList.userName.$dirty">Invalid Email!</p>
 	</div>
-	<div class="form-group">
-		<label for="created_id">created_id:</label>
-		<input type="text" name="created_id" class="form-control" placeholder="created_id" ng-model="empInfo.created_id" autofocus required />
-	</div>
+
 	<div class="form-group">
 		<label for="name">name:</label>
 		<input type="text" name="name" class="form-control" placeholder="name" ng-model="empInfo.name" autofocus required />
@@ -30,13 +21,16 @@
 		<input type="text" name="description" class="form-control" placeholder="description" ng-model="empInfo.description" autofocus required />
 	</div>
 	<div class="form-group">
+		<label for="id_user">id_user:</label>
+		<select name="id_user" ng-model="empInfo.selectedUser">
+			<option value="{{user.id_user}}"  ng-repeat="user in users">{{user.id_user}}</option>
+		</select>
+	</div>
+	<div class="form-group">
 		<label for="project_code">project_code:</label>
 		<input type="text" name="project_code" class="form-control" placeholder="project_code" ng-model="empInfo.project_code" autofocus required />
 	</div>
-	<div class="form-group">
-		<label for="last_serial_number">last_serial_number:</label>
-		<input type="text" name="last_serial_number" class="form-control" placeholder="last_serial_number" ng-model="empInfo.last_serial_number" autofocus required />
-	</div>
+
 	<div class="form-group">
 		<button class="btn btn-warning" ng-disabled="empList.$invalid">Add new project</button>
 	</div>

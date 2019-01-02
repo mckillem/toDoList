@@ -49,19 +49,13 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
         for (let i = 0; i < $scope.login.length; i++) {
             if ($scope.login[i].user_name === userName && $scope.login[i].password === password) {
                 $scope.loginUser = true;
-                //$scope.userName = userName;
 
-                // for (uzivatel of $scope.users){
-                //     if ($scope.login[i].id_user === uzivatel.id_user){
-                //         $scope.userName = uzivatel.first_name + ' ' + uzivatel.last_name;
-                //     }
-                // }
-                for(user of $scope.users) {
-                    if($scope.login[i].id_user === user.id_user) {
+                for (user of $scope.users) {
+                    if ($scope.login[i].id_user === user.id_user) {
                         $scope.userName = user.first_name + ' ' + user.last_name;
                     }
                 }
-            }
+             }
         }
     }
 
@@ -96,8 +90,7 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
 
     $scope.insertProject = function (project) {
         $http.post('databaseFiles/insertProject.php', {
-            "id_project": project.id_project,
-            "id_user": project.id_user,
+            "id_user": project.selectedUser,
             "created_id": project.created_id,
             "name": project.name,
             "description": project.description,
