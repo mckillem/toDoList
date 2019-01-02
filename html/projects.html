@@ -25,23 +25,16 @@
     <div class="table-responsive">
         <table class="table table-hover">
             <tr>
-                <th>id_project</th>
-                <th>id_user</th>
-                <th>created_id</th>
-                <th>name</th>
-                <th>description</th>
-                <th>project_code</th>
-                <th>last_serial_number</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>User</th>
+                <th>Project code</th>
             </tr>
             <tr ng-repeat="project in Projects | filter:search_query">
-                <td>
-                    <span>{{project.id_project}}</span></td>
-                <td>{{project.id_user}}</td>
-                <td>{{project.created_id}}</td>
                 <td>{{project.name}}</td>
                 <td>{{project.description}}</td>
+                <td>{{project.id_user}}</td> //vypsat jméno uživatele
                 <td>{{project.project_code}}</td>
-                <td>{{project.last_serial_number}}</td>
 
                 <td>
                     <button class="btn btn-warning" ng-click="editProject(project)" title="Edit"><span

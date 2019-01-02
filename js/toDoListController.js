@@ -6,13 +6,19 @@ toDoList.config(['$routeProvider', function ($routeProvider) {
             templateUrl: 'html/basic.tpl.html'
         })
         .when('/dashboard', {
-            templateUrl: 'html/dashboard.html'
+            templateUrl: 'html/dashboard.html',
+            controller: widgetsController,
+            activeTab: 'dashboard'
         })
         .when('/projects', {
-            templateUrl: 'html/projects.html'
+            templateUrl: 'html/projects.html',
+            controller: widgetsController,
+            activeTab: 'projects'
         })
         .when('/tasks', {
-            templateUrl: 'html/tasks.html'
+            templateUrl: 'html/tasks.html',
+            controller: widgetsController,
+            activeTab: 'tasks'
         })
         // .when('/login', {
         //     templateUrl: 'index.html'
@@ -22,8 +28,13 @@ toDoList.config(['$routeProvider', function ($routeProvider) {
         // })
 }])
 
+function widgetsController($scope, $route) {
+    $scope.$route = $route;
+}
+
 toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, $http) {
-    $scope.loginUser = false;
+    $scope.loginUser = true;
+
     // Loads user data from a file
     $http.get('databaseFiles/users.php').then(function (response) {
         $scope.users = response.data;
@@ -38,7 +49,18 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
         for (let i = 0; i < $scope.login.length; i++) {
             if ($scope.login[i].user_name === userName && $scope.login[i].password === password) {
                 $scope.loginUser = true;
-                $scope.userName = userName;
+                //$scope.userName = userName;
+
+                // for (uzivatel of $scope.users){
+                //     if ($scope.login[i].id_user === uzivatel.id_user){
+                //         $scope.userName = uzivatel.first_name + ' ' + uzivatel.last_name;
+                //     }
+                // }
+                for(user of $scope.users) {
+                    if($scope.login[i].id_user === user.id_user) {
+                        $scope.userName = user.first_name + ' ' + user.last_name;
+                    }
+                }
             }
         }
     }

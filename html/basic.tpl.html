@@ -3,19 +3,18 @@
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
             <div class="sidebar-sticky">
                 <h2>{{userName}}</h2>
-
                 <ul class="nav flex-column">
-                    <li class="nav-item">
+                    <li class="nav-item"  ng-class="{active: route.current.activeTab === 'dashboard'}">
                         <a class="nav-link active" href="#!/dashboard">
                             Dashboard
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" ng-class="{active: route.current.activeTab === 'projects'}">
                         <a class="nav-link" href="#!/projects">
                             Projects
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" ng-class="{active: route.current.activeTab === 'tasks'}">
                         <a class="nav-link" href="#!/tasks">
                             Tasks
                         </a>
