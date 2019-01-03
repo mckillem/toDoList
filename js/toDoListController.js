@@ -175,7 +175,7 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
             "estimate": task.estimate,
             "remaining": task.remaining,
             "worked": task.worked,
-            "id_user": task.id_user
+            "id_user": task.selectedUser
         }).then(function (response) {
             if (response.data == true) {
                 getTask();
