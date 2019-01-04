@@ -22,6 +22,8 @@ PRŮBĚŽNĚ PO FUNKČNÍCH ČÁSTECH TLAČIT NA GITHUB
 
 9 -> do DB přidat do tabulky další atribut project.
 
+hotovo
+
 
  var app = angular.module('putserviceApp', []);
 
