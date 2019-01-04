@@ -44,6 +44,8 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
         $scope.login = response.data;
     });
 
+    $scope.userLogin = {};
+
     $scope.clickLogIn = function (userName, password) {
 
         for (let i = 0; i < $scope.login.length; i++) {
@@ -52,6 +54,7 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
 
                 for (user of $scope.users) {
                     if ($scope.login[i].id_user === user.id_user) {
+                        $scope.userLogin = $scope.login[i];
                         $scope.userName = user.first_name + ' ' + user.last_name;
                     }
                 }
@@ -165,14 +168,21 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
     // insert task
 
     $scope.insertTask = function (task) {
+        var number = task.selectedProject.last_serial_number+1;
+        var codeTask = task.selectedProject.project_code + '-' + number;
+
+        task.selectedProject.last_serial_number = number;
+        $scope.updateProject(task.selectedProject); // možná opravit update
+        // TODO: uložit number k projectu jako last_Serial_number
+
         $http.post('databaseFiles/insertTask.php', {
-            "id_task": task.id_task,
             "name": task.name,
             "description": task.description,
-            "created_id": task.created_id,
-            "code": task.code,
-            "created_date": task.created_date,
+            "created_id": $scope.userLogin.id_user,
+            "code": codeTask,
+            "created_date": new Date(),
             "estimate": task.estimate,
+            "project": task.selectedProject.id_project,
             "remaining": task.remaining,
             "worked": task.worked,
             "id_user": task.selectedUser

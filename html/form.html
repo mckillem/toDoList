@@ -21,13 +21,13 @@
 		<input type="text" name="description" class="form-control" placeholder="description" ng-model="empInfo.description" autofocus required />
 	</div>
 	<div class="form-group">
-		<label for="id_user">id_user:</label>
+		<label for="id_user">user:</label>
 		<select name="id_user" ng-model="empInfo.selectedUser">
-			<option value="{{user.id_user}}"  ng-repeat="user in users">{{user.id_user}}</option>
+			<option value="{{user.id_user}}"  ng-repeat="user in users">{{user.name}}</option>
 		</select>
 	</div>
 	<div class="form-group">
-		<label for="project_code">project_code:</label>
+		<label for="project_code">project code:</label>
 		<input type="text" name="project_code" class="form-control" placeholder="project_code" ng-model="empInfo.project_code" autofocus required />
 	</div>
 
