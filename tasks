@@ -3,29 +3,24 @@
 PRŮBĚŽNĚ PO FUNKČNÍCH ČÁSTECH TLAČIT NA GITHUB
 2->V levé části menu (posloupná id, aby odhlášení bylo vždy nakonci) pomocí ng-repeat.
         první uživatel a poslední odhlásit
-     v angularu pole objektů. Uživatel, seznam projektů
-     (založit projekt==objeví se okno s názvem, popisem a kódem a skrytým stavem.
-     Když dám uložit, tak se projekt přidá v levo do seznamu projektů.
-     Smazat po uložení z modulů?!?. Uložit do projects.json), odhlásit
 
-     založit úkol(název, popis, trvání, po uložení možnost psát komentář), propojení na projekt
-
-     Bude nutné po dokončení záložky projekt, tak v něm bude i ten grid ve kterém bude název toho projektu
-     a v tom řádku bude na konci taky ikona pro každý projekt na založení úkolu.
-     Dále vytvořit nové menu, kde bude zase tlačítko založit úkol, kde se bude muset povinně vyplnit
-     projekt z předdefinované nabídky. Pokud není vytvořen projekt, tak tlačítko bude neaktivní.
-     Jinak při založení úkolu nebude moci vytvořit projekt ani vepsat do pole projektu něco co není v
-     nabídce, jinak dále tam bude název úkolu, popis a bude tam i možnost vybrat kdo bude řešit a
-     časová náročnost. Dále by mělo jít přiložit k úkolu, ale i k projektu nějaké externí soubory,
-     takže je zapotřebí i vytvořit adresářovou strukturu pro externí soubory. Dále při založení úkolu
-     se využije kód, který má vepsaný projekt a přidá se k němu něco podobné či v
-     tomto tvaru: "CODE_PROOJEKTU-00001", jedná se o tu část za pomlčkou, která se bude
-     implicitně zvyšovat a nesmí docházet k duplicitě, takže i tyto věci si budeme muset někam uložit.
+3 -> udělat odesílání mailu uživateli (pokud ho má definovaný), že mu je přiřazen projekt nebo task a ideálně s odkazem
 
      Snad něco z toho aspoň trochu pochopíš, když tak ti to dneska večer dovysvětlím.
 
 4-> vytvořit styl overflow (itnetwork) pokud se text nevejde tak
  zkrátit po poslední mezeře a přidat tři tečky
+
+
+5-> v dashboardu zobrazit projekty a úkoly mně přiřazené.
+
+6 -> zaheshovat přihlašovací heslo a v DB taky
+
+7 -> priority projektů a úkolů
+
+8 -> stavy projektů a úkolů
+
+9 -> do DB přidat do tabulky další atribut project.
 
 
  var app = angular.module('putserviceApp', []);
