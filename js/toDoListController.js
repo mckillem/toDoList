@@ -33,7 +33,7 @@ function widgetsController($scope, $route) {
 }
 
 toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, $http) {
-    $scope.loginUser = true;
+    $scope.loginUser = false;
 
     // Loads user data from a file
     $http.get('databaseFiles/users.php').then(function (response) {
