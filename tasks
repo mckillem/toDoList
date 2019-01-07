@@ -21,7 +21,33 @@ PRŮBĚŽNĚ PO FUNKČNÍCH ČÁSTECH TLAČIT NA GITHUB
 
 9 -> do DB přidat do tabulky další atribut project.
 
-hotovo
+10 -> v přehledu projektů ve sloupci user vypsat jméno a ne index
+
+11 -> dořešit vzhled projektů, aby se to vešlo normálně na stránku a nebylo to až dole a já musel scrolovat
+
+12 -> po uložení nového projektu nebo editace vymazat hodnoty z formuláře, aby při stisku nového projektu tam nebyly předchozí data
+
+13 -> v úkolech se vybere u nového úkolu projekt a je nutné odstranit nebo aspoň zneviditelnit položku code + udělat logiku na last_Serial_number.
+
+14 -> zanechat labely pro data a odstranit placeholder
+
+15 -> upravit jednotlivé validace na dané položky a tím pádem odstranit následující: Address field is Empty!
+
+16 -> v přehledu úkolů úschovat created_date a místo id_user zase naplnit user jménem uživatele
+
+VYCHYTÁVKY:
+
+
+1 -> v angularJS vytvořit directivu pro vlastní select object, který nebude mít první záznam prázdný a možnost nějak upravit co bude ve vzhledu a práci se samotným listem s nápovědami
+
+2 -> místo červeného obdélníku dodat ikonu koš a k tomu i tooltip a to samé pro editaci dodat ikonu tužky a tooltip
+
+3 -> začít řešit překlady (přepínání mezi jazyky)
+
+4 -> chat
+
+
+
 
 
  var app = angular.module('putserviceApp', []);
