@@ -1,24 +1,21 @@
 <!-- Form used to add new entries of employee in database -->
 <form class="form-horizontal alert alert-warning" name="empList" id="form" ng-show="showForm" ng-submit="insertProject(empInfo)"  >
 	
-	<div class="form-group">
-		<p class="text-danger" ng-show="empList.emp_name.$dirty">Name field is Empty!</p>
-	</div>
+	<!--<div class="form-group">-->
+		<!--<p class="text-danger" ng-show="empList.emp_name.$dirty">Name field is Empty!</p>-->
+	<!--</div>-->
 
-	<div class="form-group">
-		<p class="text-danger" ng-show="empList.userName.$dirty">Invalid Email!</p>
-	</div>
+	<!--<div class="form-group">-->
+		<!--<p class="text-danger" ng-show="empList.userName.$dirty">Invalid Email!</p>-->
+	<!--</div>-->
 
 	<div class="form-group">
 		<label for="name">name:</label>
-		<input type="text" name="name" class="form-control" placeholder="name" ng-model="empInfo.name" autofocus required />
+		<input type="text" name="name" class="form-control" ng-model="empInfo.name" autofocus required />
 	</div>
-	<div class="form-group">
-		<p class="text-danger" ng-show="empList.code.$dirty">Address field is Empty!</p>
-	</div>
-	<div class="form-group">
+    <div class="form-group">
 		<label for="description">description:</label>
-		<input type="text" name="description" class="form-control" placeholder="description" ng-model="empInfo.description" autofocus required />
+		<input type="text" name="description" class="form-control" ng-model="empInfo.description" autofocus required />
 	</div>
 	<div class="form-group">
 		<label for="id_user">user:</label>
@@ -28,7 +25,7 @@
 	</div>
 	<div class="form-group">
 		<label for="project_code">project code:</label>
-		<input type="text" name="project_code" class="form-control" placeholder="project_code" ng-model="empInfo.project_code" autofocus required />
+		<input type="text" name="project_code" class="form-control" ng-model="empInfo.project_code" autofocus required />
 	</div>
 
 	<div class="form-group">

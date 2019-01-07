@@ -113,6 +113,16 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
     // insert project
 
     $scope.insertProject = function (project) {
+
+        // var number = $scope.Projects[-1].last_serial_number;
+        // var lastSerialNumber =
+        // lastSerialNumber = lastSerialNumber + 1;
+        // // var codeProject = project.selectedProject.project_code + '-' + number;
+        //
+        // project.selectedProject.last_serial_number = number;
+        // // $scope.updateProject(project.selectedProject); // možná opravit update
+        // // TODO: uložit number k projectu jako last_Serial_number
+
         $http.post('databaseFiles/insertProject.php', {
             "id_user": project.selectedUser,
             "created_id": project.created_id,
@@ -124,6 +134,7 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
             if (response.data == true) {
                 getProject();
                 $('#form').css('display', 'none');
+
             }
         });
     }

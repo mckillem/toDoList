@@ -1,40 +1,34 @@
 <!-- Form used to add new entries of employee in database -->
 <form class="form-horizontal alert alert-warning" name="empList" id="taskForm" ng-show="showTaskForm" ng-submit="insertTask(empInfo)"  >
     <div class="form-group">
-        <p class="text-danger" ng-show="empList.emp_name.$dirty">Name field is Empty!</p>
+        <label for="name">Name:</label>
+        <input type="text" name="name" class="form-control" ng-model="empInfo.name" autofocus required />
     </div>
     <div class="form-group">
-        <label for="name">name:</label>
-        <input type="text" name="name" class="form-control" placeholder="name" ng-model="empInfo.name" autofocus required />
+        <label for="description">Description:</label>
+        <input type="text" name="description" class="form-control" ng-model="empInfo.description" autofocus required />
     </div>
     <div class="form-group">
-        <p class="text-danger" ng-show="empList.userName.$dirty">Invalid Email!</p>
-    </div>
-    <div class="form-group">
-        <label for="description">description:</label>
-        <input type="text" name="description" class="form-control" placeholder="description" ng-model="empInfo.description" autofocus required />
-    </div>
-    <div class="form-group">
-        <p class="text-danger" ng-show="empList.code.$dirty">Address field is Empty!</p>
-    </div>
-    <div class="form-group">
-        <label for="project">project:</label>
+        <label for="project">Project:</label>
         <select name="id_user" ng-model="empInfo.selectedProject">
             <option value="{{project}}"  ng-repeat="project in Projects">{{project.name}}</option>
         </select>
-        <input type="text" name="code" class="form-control" placeholder="code" ng-model="empInfo.code" autofocus required />
+    </div>
+    <!--<div class="form-group">-->
+        <!--<label for="code">Code:</label>-->
+        <!--<input type="text" name="code" class="form-control" ng-model="empInfo.code" autofocus required />-->
+    <!--</div>-->
+    <div class="form-group">
+        <label for="estimate">Estimate:</label>
+        <input type="text" name="estimate" class="form-control" ng-model="empInfo.estimate" autofocus required />
     </div>
     <div class="form-group">
-        <label for="estimate">estimate:</label>
-        <input type="text" name="estimate" class="form-control" placeholder="estimate" ng-model="empInfo.estimate" autofocus required />
+        <label for="remaining">Remaining:</label>
+        <input type="text" name="remaining" class="form-control" ng-model="empInfo.remaining" autofocus required />
     </div>
     <div class="form-group">
-        <label for="remaining">remaining:</label>
-        <input type="text" name="remaining" class="form-control" placeholder="remaining" ng-model="empInfo.remaining" autofocus required />
-    </div>
-    <div class="form-group">
-        <label for="worked">worked:</label>
-        <input type="text" name="worked" class="form-control" placeholder="worked" ng-model="empInfo.worked" autofocus required />
+        <label for="worked">Worked:</label>
+        <input type="text" name="worked" class="form-control" ng-model="empInfo.worked" autofocus required />
     </div>
     <div class="form-group">
         <label for="id_user">User:</label>
