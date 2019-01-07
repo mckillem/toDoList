@@ -56,6 +56,10 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
                     if ($scope.login[i].id_user === user.id_user) {
                         $scope.userLogin = $scope.login[i];
                         $scope.userName = user.first_name + ' ' + user.last_name;
+                        $scope.idUser = user.id_user;
+                        // console.log(user.id_user)
+                        // console.log($scope.idUser)
+                        // loadProjectsByUserId();
                     }
                 }
              }
@@ -64,7 +68,24 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
 
     $scope.logOut = function () {
         $scope.loginUser = false;
+        $scope.userName = "";
     }
+
+
+    //
+    // // Load project by id_user
+    // function loadProjectsByUserId() {
+    //     $http.post('databaseFiles/projects.php').then(function (response) {
+    //         $scope.Projects = response.data;
+    //         console.log($scope.idUser + '--' + $scope.Projects[0].id_user)
+    //         for (project of $scope.Projects) {
+    //             if ($scope.idUser === project.id_user) {
+    //                 $scope.projectsByUser = project.id_user
+    //                 console.log(project.id_user)
+    //             }
+    //         }
+    //     });
+    // }
 
 
     // Function to get projects from the database

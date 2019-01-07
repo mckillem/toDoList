@@ -2,4 +2,33 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Dashboard</h1>
     </div>
+
+    <!-- Table to show employee details -->
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>User</th>
+                <th>Project code</th>
+            </tr>
+            <tr ng-repeat="project in Projects | filter: {id_user: idUser}">
+                <td>{{project.name}}</td>
+                <td>{{project.description}}</td>
+                <td>{{project.id_user}}</td> <!--vypsat jméno uživatele-->
+                <td>{{project.project_code}}</td>
+
+                <td>
+                    <button class="btn btn-warning" ng-click="editProject(project)" title="Edit"><span
+                            class="glyphicon glyphicon-edit"></span></button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" ng-click="deleteProject(project)" title="Delete"><span
+                            class="glyphicon glyphicon-trash"></span></button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
 </main>
