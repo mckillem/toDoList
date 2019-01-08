@@ -3,17 +3,17 @@
 <h3 class="text-center">Update project</h3>
 	<div class="form-group">
 		<label for="name">name:</label>
-		<input type="text" class="form-control" ng-model="currentProject.name" value="{{currentProject.name}}">
+		<input type="text" id="name" class="form-control" ng-model="currentProject.name" value="{{currentProject.name}}">
 	</div>
 	<div class="form-group">
 		<label for="description">Description:</label>
-		<input type="text" class="form-control" ng-model="currentProject.description" value="{{currentProject.description}}">
+		<input type="text" id="description" class="form-control" ng-model="currentProject.description" value="{{currentProject.description}}">
 	</div>
 	<div class="form-group">
 		<label for="id_user">id_user:</label>
-		<input type="text" class="form-control" ng-model="currentProject.id_user" value="{{currentProject.id_user}}">
+		<input type="text" id="id_user" class="form-control" ng-model="currentProject.id_user" value="{{currentProject.id_user}}">
 	</div>
 	<div class="form-group">
-		<button class="btn btn-warning" ng-disabled="empList.$invalid" ng-click="updateMsg(currentUser.id_project)">Update</button>
+		<button class="btn btn-warning" ng-disabled="empList.$invalid" ng-click="updateMsg()">Update</button>
 	</div>
 </form>

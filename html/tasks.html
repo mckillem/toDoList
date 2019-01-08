@@ -3,12 +3,6 @@
         <h1 class="h2">Tasks</h1>
         <button id="newProjectBtn" class="btn btn-primary" ng-show="show_form" ng-click="taskToggle()">New task <span
                 class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
-        <!--<div class="alert alert-default input-group search-box">-->
-        <!--<span class="input-group-btn">-->
-        <!--<input type="text" class="form-control" placeholder="Search Employee Details Into Database..." ng-model="search_query">-->
-        <!--</span>-->
-        <!--</div>-->
-
     </div>
 
     <div class="col-md-9 mx-auto">
@@ -33,7 +27,7 @@
                 <th>Worked</th>
                 <th>User</th>
             </tr>
-            <tr ng-repeat="task in Tasks | filter:search_query">
+            <tr ng-repeat="task in Tasks">
                 <td>{{task.name}}</td>
                 <td>{{task.description}}</td>
                 <td>{{task.code}}</td>

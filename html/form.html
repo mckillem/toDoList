@@ -11,21 +11,21 @@
 
 	<div class="form-group">
 		<label for="name">name:</label>
-		<input type="text" name="name" class="form-control" ng-model="empInfo.name" autofocus required />
+		<input type="text" id="name" name="name" class="form-control" ng-model="empInfo.name" autofocus required />
 	</div>
     <div class="form-group">
 		<label for="description">description:</label>
-		<input type="text" name="description" class="form-control" ng-model="empInfo.description" autofocus required />
+		<input type="text" id="description" name="description" class="form-control" ng-model="empInfo.description" autofocus required />
 	</div>
 	<div class="form-group">
 		<label for="id_user">user:</label>
-		<select name="id_user" ng-model="empInfo.selectedUser">
+		<select name="id_user" id="id_user" ng-model="empInfo.selectedUser">
 			<option value="{{user.id_user}}"  ng-repeat="user in users">{{user.first_name}}</option>
 		</select>
 	</div>
 	<div class="form-group">
 		<label for="project_code">project code:</label>
-		<input type="text" name="project_code" class="form-control" ng-model="empInfo.project_code" autofocus required />
+		<input type="text" id="project_code" name="project_code" class="form-control" ng-model="empInfo.project_code" autofocus required />
 	</div>
 
 	<div class="form-group">

@@ -13,7 +13,7 @@ PRŮBĚŽNĚ PO FUNKČNÍCH ČÁSTECH TLAČIT NA GITHUB
 
 
 
-6 -> zaheshovat přihlašovací heslo a v DB taky
+6 -> HOTOVO zaheshovat přihlašovací heslo a v DB taky
 
 7 -> priority projektů a úkolů
 
@@ -25,7 +25,7 @@ PRŮBĚŽNĚ PO FUNKČNÍCH ČÁSTECH TLAČIT NA GITHUB
 
 11 -> dořešit vzhled projektů, aby se to vešlo normálně na stránku a nebylo to až dole a já musel scrolovat
 
-12 -> NEPŘIŠEL JSEM NA TO po uložení nového projektu nebo editace vymazat hodnoty z formuláře, aby při stisku nového projektu tam nebyly předchozí data
+12 -> HOTOVO po uložení nového projektu nebo editace vymazat hodnoty z formuláře, aby při stisku nového projektu tam nebyly předchozí data
 
 13 -> v úkolech se vybere u nového úkolu projekt a je nutné odstranit nebo aspoň zneviditelnit položku code)HOTOVO) + MÁ BÝT ČÍSLO? PAK STAČÍ V DATABÁZI udělat logiku na last_Serial_number.
 
