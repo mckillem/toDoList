@@ -1,33 +1,41 @@
 
 úkoly na středu 5.12.2018
 PRŮBĚŽNĚ PO FUNKČNÍCH ČÁSTECH TLAČIT NA GITHUB
-2->V levé části menu (posloupná id, aby odhlášení bylo vždy nakonci) pomocí ng-repeat.
-        první uživatel a poslední odhlásit
-
-3 -> udělat odesílání mailu uživateli (pokud ho má definovaný), že mu je přiřazen projekt nebo task a ideálně s odkazem
-
-     Snad něco z toho aspoň trochu pochopíš, když tak ti to dneska večer dovysvětlím.
+2-> V levé části menu (posloupná id, aby odhlášení bylo vždy nakonci) pomocí ng-repeat.
+        první uživatel a poslední odhlásit. V controlleru vytvořit pole objektů.
 
 4-> vytvořit styl overflow (itnetwork) pokud se text nevejde tak
- zkrátit po poslední mezeře a přidat tři tečky
+ zkrátit po poslední mezeře a přidat tři tečky. U description
 
+13A -> udělat logiku na last_Serial_number. napojit na project id (code schovaný, skládá se z CODE=project_code "-" (last_serial_number+1)
+při vytvoření nového projektu provést update last_serial_number
 
+5 -> při přihlášení automaticky na dashboard
+
+11 -> dořešit vzhled projektů, aby se to vešlo normálně na stránku a nebylo to až dole a já musel scrolovat
+
+1 -> máš vytvořené u mně DB priorities a states včetně dat, tak si je můžeš vyexportovat a nahrát u sebe
+ a dále jsem do projektu a do tasku přidal v DB 2 záznamy a to id_priority a id_state,
+ tak by bylo dobré to potom zakomponovat.
+  Tyto informace z DB (States a Priorities) bude u každé úkolu či projektu nutné zadat,
+  tak je tam přihoď prosím jako select do obou částí. Děkuji
+
+  7 -> ???priority projektů a úkolů
+
+  8 -> ???stavy projektů a úkolů
+
+HOTOVO:
+5-> HOTOVO CO SE MÁ UKLÁDAT DO CREATED_ID? TEĎ SE TAM UKLÁDÁ 0 má se ukládat ten co vytvořil úkol, je přihlášen
 
 6 -> HOTOVO zaheshovat přihlašovací heslo a v DB taky
-
-7 -> priority projektů a úkolů
-
-8 -> stavy projektů a úkolů
 
 9 -> HOTOVO do DB přidat do tabulky další atribut project.
 
 10 -> HOTOVO v přehledu projektů ve sloupci user vypsat jméno a ne index
 
-11 -> dořešit vzhled projektů, aby se to vešlo normálně na stránku a nebylo to až dole a já musel scrolovat
-
 12 -> HOTOVO po uložení nového projektu nebo editace vymazat hodnoty z formuláře, aby při stisku nového projektu tam nebyly předchozí data
 
-13 -> v úkolech se vybere u nového úkolu projekt a je nutné odstranit nebo aspoň zneviditelnit položku code)HOTOVO) + MÁ BÝT ČÍSLO? PAK STAČÍ V DATABÁZI udělat logiku na last_Serial_number.
+13 -> HOTOVO v úkolech se vybere u nového úkolu projekt a je nutné odstranit nebo aspoň zneviditelnit položku code
 
 14 -> HOTOVO zanechat labely pro data a odstranit placeholder
 
@@ -36,8 +44,6 @@ PRŮBĚŽNĚ PO FUNKČNÍCH ČÁSTECH TLAČIT NA GITHUB
 16 -> HOTOVO v přehledu úkolů schovat created_date a místo id_user zase naplnit user jménem uživatele
 
 VYCHYTÁVKY:
-
-
 1 -> v angularJS vytvořit directivu pro vlastní select object, který nebude mít první záznam prázdný a možnost nějak upravit co bude ve vzhledu a práci se samotným listem s nápovědami
 
 2 -> místo červeného obdélníku dodat ikonu koš a k tomu i tooltip a to samé pro editaci dodat ikonu tužky a tooltip
@@ -46,35 +52,6 @@ VYCHYTÁVKY:
 
 4 -> chat
 
+3 -> udělat odesílání mailu uživateli (pokud ho má definovaný), že mu je přiřazen projekt nebo task a ideálně s odkazem
 
-
-
-
- var app = angular.module('putserviceApp', []);
-
- app.controller('putserviceCtrl', function ($scope, $http) {
-
- // Simple Post request example:
-
- var url = 'posturl', data = 'parameters',config='contenttype';
-
- $http.post(url, data, config).then(function (response) {
-
- // This function handles success
-
- }, function (response) {
-
- // this function handles error
-
- });
-
- });
-
- JSON.stringify
-
-
-
-var res = $http.post('/savecompany_json', dataObj);
-res.success(function(data, status, headers, config) {
-$scope.message = data;
-});
+     Snad něco z toho aspoň trochu pochopíš, když tak ti to dneska večer dovysvětlím.

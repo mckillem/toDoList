@@ -24,7 +24,7 @@ toDoList.config(['$routeProvider', function ($routeProvider) {
         //     templateUrl: 'index.html'
         // })
         // .otherwise({
-        //     redirectTo: 'index.html'
+        //     redirectTo: 'html/dashboard.html'
         // })
 }])
 
@@ -89,18 +89,9 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
 
     $scope.insertProject = function (project) {
 
-        // var number = $scope.Projects[-1].last_serial_number;
-        // var lastSerialNumber =
-        // lastSerialNumber = lastSerialNumber + 1;
-        // // var codeProject = project.selectedProject.project_code + '-' + number;
-        //
-        // project.selectedProject.last_serial_number = number;
-        // // $scope.updateProject(project.selectedProject); // možná opravit update
-        // // TODO: uložit number k projectu jako last_Serial_number
-
         $http.post('databaseFiles/insertProject.php', {
             "id_user": project.selectedUser,
-            "created_id": project.created_id,
+            "created_id": $scope.userLogin.id_user,
             "name": project.name,
             "description": project.description,
             "project_code": project.project_code,
