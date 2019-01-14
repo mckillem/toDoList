@@ -21,9 +21,11 @@ $estimate = mysqli_real_escape_string($con, $data->estimate);
 $remaining = mysqli_real_escape_string($con, $data->remaining);
 $worked = mysqli_real_escape_string($con, $data->worked);
 $id_user = mysqli_real_escape_string($con, $data->id_user);
+$id_state = mysqli_real_escape_string($con, $data->id_state);
+$id_priority = mysqli_real_escape_string($con, $data->id_priority);
 
 // mysqli insert query
-$query = "INSERT into Tasks (id_task,name,description,created_id,code,created_date,estimate,remaining,worked,id_user) VALUES ('$id_task','$name','$description','$created_id','$code','$created_date','$estimate','$remaining','$worked','$id_user')";
+$query = "INSERT into Tasks (id_task,name,description,created_id,code,created_date,estimate,remaining,worked,id_user,id_state,id_priority) VALUES ('$id_task','$name','$description','$created_id','$code','$created_date','$estimate','$remaining','$worked','$id_user','$id_state','$id_priority')";
 // Inserting data into database
 mysqli_query($con, $query);
 echo true;

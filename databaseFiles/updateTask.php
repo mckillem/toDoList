@@ -21,7 +21,10 @@ $estimate = mysqli_real_escape_string($con, $data->estimate);
 $remaining = mysqli_real_escape_string($con, $data->remaining);
 $worked = mysqli_real_escape_string($con, $data->worked);
 $id_user = mysqli_real_escape_string($con, $data->id_user);
+$id_state = mysqli_real_escape_string($con, $data->id_state);
+$id_priority = mysqli_real_escape_string($con, $data->id_priority);
+
 // mysqli query to insert the updated data
-$query = "UPDATE Tasks SET id_task='$id_task',name='$name',description='$description',created_id='$created_id',code='$code',created_date='$created_date',estimate='$estimate',remaining='$remaining',worked='$worked',id_user='$id_user' WHERE $id_task=$id_task";
+$query = "UPDATE Tasks SET id_task='$id_task',name='$name',description='$description',created_id='$created_id',code='$code',created_date='$created_date',estimate='$estimate',remaining='$remaining',worked='$worked',id_user='$id_user',id_state='$id_state',id_priority='$id_priority' WHERE $id_task=$id_task";
 mysqli_query($con, $query);
 echo true;

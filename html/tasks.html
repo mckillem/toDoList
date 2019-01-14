@@ -26,6 +26,8 @@
                 <th>Remaining</th>
                 <th>Worked</th>
                 <th>User</th>
+                <th>State</th>
+                <th>Priority</th>
             </tr>
             <tr ng-repeat="task in Tasks">
                 <td>{{task.name}}</td>
@@ -35,7 +37,8 @@
                 <td>{{task.remaining}}</td>
                 <td>{{task.worked}}</td>
                 <td>{{users[task.id_user - 1].first_name}}</td>
-
+                <td>{{states[task.id_state - 1].name}}</td>
+                <td>{{priorities[task.id_priority - 1].name}}</td>
 
                 <td>
                     <button class="btn btn-warning" ng-click="editTask(task)" title="Edit"><span

@@ -44,6 +44,14 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
         $scope.login = response.data;
     });
 
+    $http.get('databaseFiles/states.php').then(function (response) {
+        $scope.states = response.data;
+    });
+    $http.get('databaseFiles/priorities.php').then(function (response) {
+        $scope.priorities = response.data;
+    });
+
+
     $scope.userLogin = {};
 
 
@@ -95,7 +103,9 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
             "name": project.name,
             "description": project.description,
             "project_code": project.project_code,
-            "last_serial_number": project.last_serial_number
+            "last_serial_number": project.last_serial_number,
+            "id_state": project.selectedState,
+            "id_priority": project.selectedPriority
         }).then(function (response) {
             if (response.data == true) {
                 getProject();
@@ -132,7 +142,9 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
             "name": project.name,
             "description": project.description,
             "project_code": project.project_code,
-            "last_serial_number": project.last_serial_number
+            "last_serial_number": project.last_serial_number,
+            "id_state": project.id_state,
+            "id_priority": project.id_priority
         }).then(function (response) {
             $scope.show_form = true;
             if (response.data == true) {
@@ -190,7 +202,9 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
             "project": task.selectedProject.id_project,
             "remaining": task.remaining,
             "worked": task.worked,
-            "id_user": task.selectedUser
+            "id_user": task.selectedUser,
+            "id_state": task.selectedState,
+            "id_priority": task.selectedPriority
         }).then(function (response) {
             if (response.data == true) {
                 getTask();
@@ -230,11 +244,13 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
             "created_id": task.created_id,
             "code": task.code,
             "created_date": task.created_date,
-            "project": task.selectedProject.id_project,
+            // "project": task.selectedProject.id_project, TODO: předpokládám, že není možnost změny leda dle práv
             "estimate": task.estimate,
             "remaining": task.remaining,
             "worked": task.worked,
-            "id_user": task.id_user
+            "id_user": task.id_user,
+            "id_state": task.id_state,
+            "id_priority": task.id_priority
         }).then(function (response) {
             $scope.show_form = true;
             if (response.data == true) {

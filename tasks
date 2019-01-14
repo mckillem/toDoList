@@ -12,17 +12,18 @@ při vytvoření nového projektu provést update last_serial_number
 
 5 -> při přihlášení automaticky na dashboard
 
+HESLO SE ZOBRAZUJE V ADRESE SPOLU SE JMÉNEM ale asi jen u Ladi
+
 11 -> dořešit vzhled projektů, aby se to vešlo normálně na stránku a nebylo to až dole a já musel scrolovat
 
-1 -> máš vytvořené u mně DB priorities a states včetně dat, tak si je můžeš vyexportovat a nahrát u sebe
- a dále jsem do projektu a do tasku přidal v DB 2 záznamy a to id_priority a id_state,
+1 -> máš vytvořené u mně DB priorities a states včetně dat
  tak by bylo dobré to potom zakomponovat.
   Tyto informace z DB (States a Priorities) bude u každé úkolu či projektu nutné zadat,
   tak je tam přihoď prosím jako select do obou částí. Děkuji
 
-  7 -> ???priority projektů a úkolů
+  7 -> priority  a úkolů
 
-  8 -> ???stavy projektů a úkolů
+  8 -> stavy  a úkolů
 
 HOTOVO:
 5-> HOTOVO CO SE MÁ UKLÁDAT DO CREATED_ID? TEĎ SE TAM UKLÁDÁ 0 má se ukládat ten co vytvořil úkol, je přihlášen

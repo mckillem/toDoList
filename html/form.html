@@ -27,6 +27,18 @@
 		<label for="project_code">project code:</label>
 		<input type="text" id="project_code" name="project_code" class="form-control" ng-model="empInfo.project_code" autofocus required />
 	</div>
+	<div class="form-group">
+		<label for="id_state">id_state:</label>
+		<select name="id_state" id="id_state" ng-model="empInfo.selectedState">
+			<option value="{{state.id_state}}"  ng-repeat="state in states">{{state.name}}</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<label for="id_priority">user:</label>
+		<select name="id_priority" id="id_priority" ng-model="empInfo.selectedPriority">
+			<option value="{{priority.id_priority}}"  ng-repeat="priority in priorities">{{priority.name}}</option>
+		</select>
+	</div>
 
 	<div class="form-group">
 		<button class="btn btn-warning" ng-disabled="empList.$invalid">Add new project</button>

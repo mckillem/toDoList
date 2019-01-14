@@ -11,9 +11,11 @@ $name = mysqli_real_escape_string($con, $data->name);
 $description = mysqli_real_escape_string($con, $data->description);
 $project_code = mysqli_real_escape_string($con, $data->project_code);
 $last_serial_number = mysqli_real_escape_string($con, $data->last_serial_number);
+$id_state = mysqli_real_escape_string($con, $data->id_state);
+$id_priority = mysqli_real_escape_string($con, $data->id_priority);
 
 // mysqli insert query
-$query = "INSERT into Projects (id_project,id_user,created_id,name,description,project_code,last_serial_number) VALUES ('$id_project','$id_user','$created_id','$name','$description','$project_code','$last_serial_number')";
+$query = "INSERT into Projects (id_project,id_user,created_id,name,description,project_code,last_serial_number,id_state,id_priority) VALUES ('$id_project','$id_user','$created_id','$name','$description','$project_code','$last_serial_number','$id_state','$id_priority')";
 // Inserting data into database
 mysqli_query($con, $query);
 echo true;

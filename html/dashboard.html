@@ -11,12 +11,16 @@
                 <th>Description</th>
                 <th>User</th>
                 <th>Project code</th>
+                <th>State</th>
+                <th>Priority</th>
             </tr>
             <tr ng-repeat="project in Projects | filter: {id_user: idUser}">
                 <td>{{project.name}}</td>
                 <td>{{project.description}}</td>
                 <td>{{users[project.id_user - 1].first_name}}</td> <!--vypsat jméno uživatele-->
                 <td>{{project.project_code}}</td>
+                <td>{{states[project.id_state - 1].name}}</td>
+                <td>{{priorities[project.id_priority - 1].name}}</td>
 
                 <td>
                     <button class="btn btn-warning" ng-click="editProject(project)" title="Edit"><span
@@ -38,6 +42,8 @@
                 <th>Remaining</th>
                 <th>Worked</th>
                 <th>User</th>
+                <th>State</th>
+                <th>Priority</th>
             </tr>
             <tr ng-repeat="task in Tasks | filter: {id_user: idUser}">
                 <td>{{task.name}}</td>
@@ -47,6 +53,8 @@
                 <td>{{task.remaining}}</td>
                 <td>{{task.worked}}</td>
                 <td>{{users[task.id_user - 1].first_name}}</td>
+                <td>{{states[task.id_state - 1].name}}</td>
+                <td>{{priorities[task.id_priority - 1].name}}</td>
 
 
                 <td>
