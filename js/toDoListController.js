@@ -32,6 +32,42 @@ function widgetsController($scope, $route) {
     $scope.$route = $route;
 }
 
+// toDoList.filter('truncate', function () {
+//     return function (text) {
+//         let symbols = "...";
+//         let length = 12;
+//
+//         if(!this.isString(text))
+//         {
+//             return;
+//         }
+//         if (text.length >= 15)
+//         {
+//             return text.substring(0, length) + symbols;
+//         }
+//     }
+// })
+// angular.module('filter', [])
+//     .filter('truncate', function() {
+//         return function(text, delka, znaky) {
+//
+//             // Pokud nedostaneme textový řetězec, nebudeme dělat nic
+//             if (!angular.isString(text)) return;
+//
+//             // Vstupní parametry
+//             if (!angular.isNumber(delka))
+//                 delka = 15;
+//             if (!angular.isString(znaky))
+//                 znaky = "...";
+//
+//             // Pokud je délka textu menší než délka v parametru, neprovedeme žádnou změnu
+//             if (text.length <= delka)
+//                 return text;
+//             // Jinak text zkrátíme a přidáme za něj dané znaky
+//             return text.substring(0, delka) + znaky;
+//         };
+//     });
+
 toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, $http) {
     $scope.loginUser = false;
 
@@ -185,10 +221,11 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
     // insert task
 
     $scope.insertTask = function (task) {
-        var number = task.selectedProject.last_serial_number+1;
-        var codeTask = task.selectedProject.project_code + '-' + number;
+        console.log(task.selectedProject.last_serial_number)
+        $scope.number = task.selectedProject.last_serial_number+1;
+        $scope.codeTask = task.selectedProject.project_code + '-' + $scope.number;
 
-        task.selectedProject.last_serial_number = number;
+        task.selectedProject.last_serial_number = $scope.number;
         $scope.updateProject(task.selectedProject); // možná opravit update
         // TODO: uložit number k projectu jako last_Serial_number
 
@@ -196,10 +233,10 @@ toDoList.controller('toDoListController', ['$scope', '$http', function ($scope, 
             "name": task.name,
             "description": task.description,
             "created_id": $scope.userLogin.id_user,
-            "code": codeTask,
+            "code": $scope.codeTask,
             "created_date": new Date(),
             "estimate": task.estimate,
-            "project": task.selectedProject.id_project,
+            "project": task.selectedProject,
             "remaining": task.remaining,
             "worked": task.worked,
             "id_user": task.selectedUser,

@@ -16,7 +16,7 @@
             </tr>
             <tr ng-repeat="project in Projects | filter: {id_user: idUser}">
                 <td>{{project.name}}</td>
-                <td>{{project.description}}</td>
+                <td>{{project.description | limitTo: 15}}{{project.description.length >= 15 ? '...' : ''}}</td>
                 <td>{{users[project.id_user - 1].first_name}}</td> <!--vypsat jméno uživatele-->
                 <td>{{project.project_code}}</td>
                 <td>{{states[project.id_state - 1].name}}</td>
@@ -47,7 +47,7 @@
             </tr>
             <tr ng-repeat="task in Tasks | filter: {id_user: idUser}">
                 <td>{{task.name}}</td>
-                <td>{{task.description}}</td>
+                <td>{{task.description | limitTo: 15}}{{task.description.length >= 15 ? '...' : ''}}</td>
                 <td>{{task.code}}</td>
                 <td>{{task.estimate}}</td>
                 <td>{{task.remaining}}</td>

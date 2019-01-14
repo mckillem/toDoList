@@ -35,7 +35,7 @@
             </tr>
             <tr ng-repeat="project in Projects | filter:search_query">
                 <td>{{project.name}}</td>
-                <td>{{project.description}}</td>
+                <td>{{project.description | limitTo: 15}}{{project.description.length >= 15 ? '...' : ''}}</td>
                 <td>{{users[project.id_user - 1].first_name}}</td>
                 <td>{{project.project_code}}</td>
                 <td>{{states[project.id_state - 1].name}}</td>

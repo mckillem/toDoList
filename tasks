@@ -4,10 +4,7 @@ PRŮBĚŽNĚ PO FUNKČNÍCH ČÁSTECH TLAČIT NA GITHUB
 2-> V levé části menu (posloupná id, aby odhlášení bylo vždy nakonci) pomocí ng-repeat.
         první uživatel a poslední odhlásit. V controlleru vytvořit pole objektů.
 
-4-> vytvořit styl overflow (itnetwork) pokud se text nevejde tak
- zkrátit po poslední mezeře a přidat tři tečky. U description
-
-13A -> udělat logiku na last_Serial_number. napojit na project id (code schovaný, skládá se z CODE=project_code "-" (last_serial_number+1)
+13A ->??? udělat logiku na last_Serial_number. napojit na project id (code schovaný, skládá se z CODE=project_code "-" (last_serial_number+1)
 při vytvoření nového projektu provést update last_serial_number
 
 5 -> při přihlášení automaticky na dashboard
@@ -16,14 +13,6 @@ HESLO SE ZOBRAZUJE V ADRESE SPOLU SE JMÉNEM ale asi jen u Ladi
 
 11 -> dořešit vzhled projektů, aby se to vešlo normálně na stránku a nebylo to až dole a já musel scrolovat
 
-1 -> máš vytvořené u mně DB priorities a states včetně dat
- tak by bylo dobré to potom zakomponovat.
-  Tyto informace z DB (States a Priorities) bude u každé úkolu či projektu nutné zadat,
-  tak je tam přihoď prosím jako select do obou částí. Děkuji
-
-  7 -> priority  a úkolů
-
-  8 -> stavy  a úkolů
 
 HOTOVO:
 5-> HOTOVO CO SE MÁ UKLÁDAT DO CREATED_ID? TEĎ SE TAM UKLÁDÁ 0 má se ukládat ten co vytvořil úkol, je přihlášen
@@ -44,8 +33,21 @@ HOTOVO:
 
 16 -> HOTOVO v přehledu úkolů schovat created_date a místo id_user zase naplnit user jménem uživatele
 
+1 -> máš vytvořené u mně DB priorities a states včetně dat
+ tak by bylo dobré to potom zakomponovat.
+  Tyto informace z DB (States a Priorities) bude u každé úkolu či projektu nutné zadat,
+  tak je tam přihoď prosím jako select do obou částí. Děkuji
+
+  7 -> priority  a úkolů
+
+  8 -> stavy  a úkolů
+
+  4-> ZKRACUJE ALE BEZ TEČEK vytvořit styl overflow (itnetwork) pokud se text nevejde tak
+   zkrátit po poslední mezeře a přidat tři tečky. U description
+
 VYCHYTÁVKY:
-1 -> v angularJS vytvořit directivu pro vlastní select object, který nebude mít první záznam prázdný a možnost nějak upravit co bude ve vzhledu a práci se samotným listem s nápovědami
+1 -> v angularJS vytvořit directivu pro vlastní select object, který nebude mít první záznam prázdný a
+možnost nějak upravit co bude ve vzhledu a práci se samotným listem s nápovědami
 
 2 -> místo červeného obdélníku dodat ikonu koš a k tomu i tooltip a to samé pro editaci dodat ikonu tužky a tooltip
 

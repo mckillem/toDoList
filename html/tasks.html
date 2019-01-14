@@ -31,7 +31,7 @@
             </tr>
             <tr ng-repeat="task in Tasks">
                 <td>{{task.name}}</td>
-                <td>{{task.description}}</td>
+                <td>{{task.description | limitTo: 15}}{{task.description.length >= 15 ? '...' : ''}}</td>
                 <td>{{task.code}}</td>
                 <td>{{task.estimate}}</td>
                 <td>{{task.remaining}}</td>
